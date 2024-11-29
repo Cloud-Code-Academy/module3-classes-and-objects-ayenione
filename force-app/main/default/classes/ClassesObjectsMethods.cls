@@ -39,20 +39,14 @@ public with sharing class ClassesObjectsMethods {
      * @return A list containing the length of the string, a substring of the string, and the string in lower case.
      */
     public static List<String> practiceStringMethods() {
-        // Initialize a String with 'Hello, Salesforce!'
-
-        String greetSF = 'Hello, Salesforce!';
         
-        // Get the length of the String       
-        Integer lengthOfGreeting = greetSF.length();
+        String greetSF = 'Hello, Salesforce!'; // Initialize a String with 'Hello, Salesforce!'
 
-        // Get a substring of the String of the first 5 characters
+        Integer lengthOfGreeting = greetSF.length();  // Get the length of the String  
 
-        String subGreeting  = greetSF.substring(0, 5);
+        String subGreeting  = greetSF.substring(0, 5); // Get a substring of the String of the first 5 characters
 
-        // Convert the String to lower case
-
-        String lowerGreeting = greetSF.toLowerCase();
+        String lowerGreeting = greetSF.toLowerCase(); // Convert the String to lower case
         
         // Return the list with the string data
         // In the first position add the string length
@@ -60,11 +54,9 @@ public with sharing class ClassesObjectsMethods {
         // In the third position add the string in lower case
 
         List<String> greetingString = new List<String>();
-       
-        greetingString.add(String.valueOf(lengthOfGreeting));
-        greetingString.add(subGreeting);
-        greetingString.add(lowerGreeting);
-       
+
+        greetingString.addAll(new List <String>{ String.valueOf(lengthOfGreeting), subGreeting, lowerGreeting});
+  
         return greetingString; // Replace null with the variable you used to store the result
     }
 
