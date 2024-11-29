@@ -133,16 +133,7 @@ public with sharing class ClassesObjectsMethods {
         // Initialize the result Integer
 
         Integer vowelCount = 0;
-
-        /*
-
         
-        for () {
-            // get individual characters from the string - hint use substring or split
-            // check if the character is a vowel
-            // if it is a vowel, increment the result Integer
-        }
-        */
         List<String> vowels = new List<String>{'a','e','i','o','u'};
 
         for (Integer i = 0; i < str.length(); i++) {
@@ -151,12 +142,10 @@ public with sharing class ClassesObjectsMethods {
 
             if (vowels.contains(charAtIndex)) {
                 vowelCount += 1;
-                
-                    
+   
           }
     
-         // Replace null with the variable you used to store the result
-
+        
         }
         return vowelCount;
     }
@@ -176,25 +165,22 @@ public with sharing class ClassesObjectsMethods {
 
         // The variable to store the concatenated string
 
-        String finalScientists = '';
+        List<String> matchingScientists = new List<String>();
+     
         String gee = 'g';
-
        
            for (String name : scientistNames) {
          
-              if (name.toLowerCase().contains(gee)){
-                    
-                 finalScientists += name + ',' ; // add each name with a comma
+              if (name.containsIgnoreCase(gee)){
+
+                matchingScientists.add(name);
+
                    }                     
           
             }       
-            
-         if (finalScientists.endsWith(',')) {
-                finalScientists = finalScientists.substring(0, finalScientists.length() - 1);
-            }
-
-      return finalScientists;  // Replace null with the variable you used to store the result
-          
+  
+        return String.join(matchingScientists, ',');
+                
          
         }
       
