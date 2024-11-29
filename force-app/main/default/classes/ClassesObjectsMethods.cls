@@ -69,22 +69,13 @@ public with sharing class ClassesObjectsMethods {
      */
     public static List<Boolean> checkStringContent(String input) {
 
-        // Initialize a list to store the results
-
-        List <Boolean> checkStringResult = new List<Boolean>();
-
-        
-        // Check if the string starts with 'Sales'
-
-       Boolean startsWithString =  input.startsWith('Sales');
-        
-        // Check if the string ends with 'Force'
-
-        Boolean endsWithString = input.endsWith('Force');
-        
-        // Check if the string contains 'Awesome'
-
-        Boolean stringContains = input.contains('Awesome');
+        List <Boolean> checkStringResult = new List<Boolean>();  // Initialize a list to store the results
+       
+       Boolean startsWithString =  input.startsWith('Sales') ? true : false; // Check if the string starts with 'Sales'
+       
+        Boolean endsWithString = input.endsWith('Force') ? true : false; // Check if the string ends with 'Force'
+       
+        Boolean stringContains = input.contains('Awesome') ? true : false; // Check if the string contains 'Awesome'
 
         checkStringResult.add(startsWithString);
         checkStringResult.add(endsWithString);
@@ -101,17 +92,13 @@ public with sharing class ClassesObjectsMethods {
      * @return A string consisting of only unique words from the input sentence.
      */
     public static String removeDuplicateWords(String sentence) {
-        // Split the sentence into words
+       
+        List<String> words = sentence.split(' ');    // Split the sentence into words
 
-        List<String> words = sentence.split(' ');
+        Set<String> uniqueWords = new Set<String> (); // Create a set to store the unique words
 
-        // Create a set to store the unique words
-
-        List<String> uniqueWords = new List<String> ();
-
-        // Add each word to the set
-
-        for(String word : words) {
+         // Add each word to the set
+        for(String word : words) {  
 
             if (!uniqueWords.contains(word))
 
@@ -122,10 +109,7 @@ public with sharing class ClassesObjectsMethods {
         }
 
 
-
-        // Join the unique words back into a sentence
-
-        String uniqueSentence = '';
+        String uniqueSentence = ''; // Join the unique words back into a sentence
 
         for (String word : uniqueWords) {
 
