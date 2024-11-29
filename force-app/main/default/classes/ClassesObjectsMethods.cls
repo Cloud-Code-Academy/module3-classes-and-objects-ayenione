@@ -568,13 +568,10 @@ public with sharing class ClassesObjectsMethods {
      */
     public static Person getOlderPerson(Person person1, Person person2) {
 
-       if( person1.getAge() == person2.getAge()){
+       if( person1.getAge() >= person2.getAge()){
+        
         return person1;
-       }
-       
-       else if (person1.getAge() > person2.getAge()){
-
-        return person1;
+    
        }
         return person2; // Replace null with the variable you used to store the result
     }
